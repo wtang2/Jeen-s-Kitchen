@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+   
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/HW1_problem2.css">
+  <link rel="stylesheet" type="text/css" href="css/Home.css">
+  <script src="./audiojs/audio.min.js"></script>
+    <script>
+     /* audiojs.events.ready(function() {
+        audiojs.createAll();
+      });*/
+     
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61580508-1', 'auto');
+  ga('send', 'pageview');
+
+ 
+    </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body background="image/bg_home.jpg" >
+  <div id="container"  >
+    <div id="block1"> 
+      <div id="header_left"> Jeen's Kitchen </div>
+      <div id="header_right">
+        <ul class="nonDropDown">
+          <li id="navBar"><a id="active">Home  </a> </li>
+          <li id="navBar"><a href="#">About Us</a></li>
+          <li id="navBar"><a href="news.html" >News</a></li>
+          <li id="navBar"><a href="gallery.html" >Food Gallery</a></li> 
+          
+          <li id="menu"><a href="#" >Menus</a>
+            <ul id="subitem" class = "dropdown">
+              <li ><a href="image/1.pdf">LUNCH MENU</a> </li>
+              <li ><a href="image/2.pdf">DINNER MENU</a> </li>
+            </ul> 
+          </li>
+
+          <li id="navBar"><a href="contactUs.html">Contact Us</a> </li>
+        </ul>
+      </div>
+
+      <div id="slider"> 
+        <spanslide id="1" class="slide"> <img id="i" src="image/p3.jpg" >   
+          <p id="p1" >WELCOME TO <br></p><br><br>
+          <p>  <h3 id="p2" > MY WEB PAGE </h3></p>
+        </spanslide>
+        <spanslide id="2" class="slide"> <img  id="i" src="image/p2.jpg"> 
+          <p id="p1" >GREAT FOOD TO PLEASURE YOUR SOUL<br></p><br><br>
+          <p>  <h3 id="p2" > GREAT PLACE TO MEET FRIENDS </h3></p>
+
+        </spanslide>
+        <spanslide id="3" class="slide"> <img  id="i" src="image/p25.jpg" >  
+          <p id="p1" >BRING YOUR FAMILY  <br></p><br><br>
+          <p>  <h3 id="p2"> YOUR FRIENDS </h3></p><br><br>
+          <p>  <h3 id="p2"> YOUR COLLEAGUE </h3></p>
+        </spanslide>  
+        <ul></ul>     
+      </div>
+      
+      <div id="div1"></div>      
+      <div id="div2"> </div>
+      <div id="slideDown">
+         <p id="a1"> <strong>STIMULATE YOUR <br>TASTE BUDS!</strong></p> 
+         <p id="a2"> SAMPLE OF WHAT'S NEW! </p>
+       </div>
+
+      <div style="width:660px; height: 170px; overflow-x:hidden; overflow-y:hidden">
+
+        <input id="scrollLeft" type="button" onclick="left()"  value="<" > </input>
+
+        <div class="imgwrap">     
+          <img id="image1" class="thumbnail1" src="image/9.jpg" data-title="Bah kut teh<br>肉骨茶<br>Pork ribs soup" style="alt:Something sweet to eat ; "></img>
+        </div>
+        <div class="imgwrap">
+          <img id="image" class="thumbnail2" src="image/15.jpg" data-title="Assam laksa<br>亞三叻沙" style=" alt:about us ; "></img>
+        </div>
+        <div class="imgwrap"> 
+          <img id="image" class="thumbnail3" src="image/3.jpg" data-title="Satay" style="alt:about us ; "></img>
+        </div>
+     
+        <input id="scrollRight" type="button" style="background-color:rgb(104,0,0); color:white; margin:21px 4px 15px 0px; font-size:22px; float:right; height:140px" value=">" onclick="scrollRight()"> </input> 
+       
+        <div class="imgwrap">  
+          <img id="image4" class="thumbnail4" src="image/26.jpg" data-title="Ais Kacang<br>红豆冰" style="alt:about us ; "></img>
+        </div>
+      </div>
+      
+      <audio loop autoplay  id="player" preload="auto"> 
+           <source src="image/1.mp3" />    
+      </audio>      
+    
+   </div>
+    <div id="" style="width:956px; margin-top:29px;height:92px;background-color:white;opacity:.6 ;float:left"> </div>
+ 
+ 
+      <div id="footer">
+        Images in this school project are only for illustrative purposes.  
+           <img id ="audio" src="image/unmute.png" style="bottom:0px;margin-left:370px;top:710px;position:absolute;height:22px;z-index:110" onclick="mute(this)"> </img>
+      </div>
+   
+</div>
+ 
+
+<script >  
+  $('li#navBar').click(function(){ 
+    audio = document.getElementById("player"); 
+    var url ="about.html";
+    id=audio.currentTime; 
+    window.location=url +'?id='+id; 
+  });
+       
+     function mute(x){ 
+        if(x.getAttribute('src')=="image/unmute.png") {
+          document.getElementById('audio').setAttribute('src', 'image/mute.png'); 
+          document.getElementById('player').muted = true;
+        }
+        else {
+          document.getElementById('audio').setAttribute('src', 'image/unmute.png'); 
+          document.getElementById('player').muted = false;
+        }
+     }
+/*
+     function fullScreen(){
+      window.open("home.html","fs","scrollbars=no, directories=0,titlebar=0,toolbar=0,location=0,status=0, menubar=0,scrollbars=no,resizable=no,toolbar=no,menubar=no")
+     }*/
+
+$("#slider > spanslide:gt(0)").hide();
+var index = 1;
+var maxindex = $('#slider > spanslide').length;
+
+setInterval(function () {
+    $('#slider > spanslide:first')
+        .fadeOut(1000) 
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo('#slider');
+    $('#slider ul li').removeClass('active');
+    $('#slider ul li:eq(' + index + ')').addClass('active');
+    index = index < maxindex - 1 ? index + 1 : 0;
+}, 3000);
+
+for (var i = 0; i < maxindex; i++) {
+    $('#slider ul').append('<li class="' + (i == 0 ? 'active' : '') + '"></li>');
+} 
+  $(document).ready(function(){
+
+    //document.getElementById("player").removeAttribute("controls");   
+    $(".thumbnail1").fadeIn("slow");
+    $(".thumbnail2").fadeIn("slow");
+    $(".thumbnail3").fadeIn("slow"); 
+    $(".thumbnail4").fadeIn("slow"); 
+
+    var t;
+    $('div.imgwrap img').hover(function(){  
+      var textTopPosition = $(this).position().top+25;   
+      var textLeftPosition = $(this).position().left+30;  
+      t = $('<div/>')
+          .css({top:textTopPosition})
+          .css({left:textLeftPosition})
+          .html($(this).data('title'))
+          .appendTo($(this).parent());     
+        $(this).fadeTo('fast',0.5);
+      });
+
+      $('div.imgwrap').mouseleave(function(){  
+         $(this).find('img').fadeTo('fast',1);
+         $(this).find('div').remove();
+    });  
+}) 
+ 
+  function left(){    
+    document.getElementById("image4").style.display="none";
+    document.getElementById("image1").style.display="inline";  
+    document.getElementById("scrollRight").disabled= false ; 
+    document.getElementById("scrollRight").style.opacity="1.0"; 
+    document.getElementById("scrollLeft").disabled= true ; 
+    document.getElementById("scrollLeft").style.opacity="0.4";
+  }  
+
+  function scrollRight(){  
+    document.getElementById("scrollRight").disabled=true ; 
+    document.getElementById("scrollRight").style.opacity="0.4";  
+    document.getElementById("scrollLeft").disabled= false ; 
+    document.getElementById("scrollLeft").style.opacity="1.0"; 
+
+    document.getElementById("image1").style.display="none";
+    document.getElementById("image4").style.display="inline";
+   
+          
+  }   
+</script>  
+</body>
+</html>

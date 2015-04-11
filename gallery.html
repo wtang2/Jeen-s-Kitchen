@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <title>Jeen&#39s Kitchen</title>
+	<link rel="stylesheet" type="text/css" href="css/HW1_problem2.css">
+  <link rel="stylesheet" type="text/css" href="css/Gallery.css">
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61580508-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <style type="text/css">
+  
+  .img div {
+  position:absolute;
+  float:left;
+  margin:31px 0px;
+  width: auto; 
+  background:#666699;
+  color:#fff;
+  line-height:25px;
+  padding:0 10px;
+  word-break:keep-all;
+}
+
+.weddingCakeImage div {
+  position:absolute;
+  float:left;
+  margin:31px 0px;
+  width: auto; 
+  background:#666699;
+  color:#fff;
+  line-height:25px;
+  padding:0 10px;
+  word-break:keep-all;
+} 
+</style>
+</head>
+
+<body background="image/garden.jpg">
+  <div id="container">    
+    <div id="block1">     
+      <div id="header_left"> 
+          Jeen's Kitchen
+      </div>
+
+       <div id="header_right">
+        <ul class="nonDropDown">
+          <li id="navBar"><a href="home.html">Home </a> </li>
+          <li id="navBar"><a href="about.html" >About Us</a></li>
+          <li id="navBar"><a href="news.html" >News</a></li>
+          <li id="navBar"><a id="active" >Food Gallery</a></li> 
+          
+          <li id="menu"><a href="#" >Menus</a>
+            <ul id="subitem" class = "dropdown">
+              <li ><a href="image/1.pdf">LUNCH MENU</a> </li>
+              <li ><a href="image/2.pdf">DINNER MENU</a> </li>
+            </ul> 
+          </li>
+
+          <li id="navBar"><a href="contactUs.html">Contact Us</a> </li>
+        </ul>
+      </div>
+      
+     <div id="cover" style="display:none; z-index:500;position:absolute;width:956px; top:141px;background-color:white; opacity:0.84;height:567px;float:left">
+     </div>
+     <div id="slideDown" style="width:100%; background-color:white; opacity:0.82;height:570px;float:left">
+     </div>
+      <div id="scroll" style="height: 567px; width:1000px;top:140px;position:absolute;overflow-x:hidden;overflow-y:hidden">
+      <input class="onclick" id="bakeryButton" disabled type="button" style="cursor:default;margin-top:5px;border-radius:15px;margin-left:30px;background-color:#666699; color:white; padding:10px; width:205px;font-size:14px" value=" Main Entrees and Starters" onclick="bakeryImages()"></input>
+      
+      <button class="onclick" id="weddingButton" style="border-radius:15px;background-color:#666699; margin-left: 13px; color:white; padding:10px; width:215px;font-size:14px;margin-bottom:9px" onclick="weddingImages()">  Desserts, Drinks, and Fruits</button>
+      
+      <br>
+
+        <div id="img" class="img"> 
+            <img  class="onclick" src="image/1.jpg" data-title="PanMee<br>板面" alt="PanMee (Chinese : 板面)"   
+              onclick="bigImage(1)"  style=" width:205px;height:160px; " /> 
+        </div> 
+    
+        <div id="img" class="img">
+           
+          <img class="onclick" src="image/2.jpg" alt="Wonton Mee (Chinese : 雲吞麵) " data-title="Wonton Mee<br>雲吞麵" onclick="bigImage(2)" style=" width:205px;height:160px"> 
+        </div>
+
+        <div id="img" class="img">
+          <img class="onclick" src="image/3.jpg" alt="Satay" data-title="Satay" onclick="bigImage(3)" style="width:205px;height:160px">
+        </div>
+
+        <div id="img" class="img">
+          <img class="onclick" src="image/4.jpg" alt="Hokkien Mee (Chinese : 福建炒麵)" data-title="Hokkien Mee<br>福建炒麵" onclick="bigImage(4)" style="width:205px;height:160px"> 
+        </div>
+
+        <div id="img" class="img">
+          <img class="onclick" src="image/5.jpg" alt="Cantonese fried noodles (Chinese : 廣府炒)" data-title="Cantonese fried noodles<br>廣府炒" onclick="bigImage(5)" style="width:205px;height:160px"> 
+        </div>
+
+        <div id="img" class="img"  >
+          <img class="onclick" src="image/6.jpg" alt="Ngah Po Fan<br>(Chinese : 瓦煲飯)" data-title="Claypot rice<br>瓦煲飯<br>Ngah Po Fan" onclick="bigImage(6)" style="width:205px;height:160px"> 
+        </div> 
+
+        <img id="close" src="image/close.png"  style="z-index:550;display:none;top:56px;left:749px;float:left;height:30px; width:30px; position:absolute"> </img>
+
+        <img id="infor" src = "image/min.png"  style="z-index:550;display:none;height:30px; width:30px;  position:absolute;top:87px;left:749px;float:left;" onclick="informa()"></img>
+
+        <div id="words"  style="text-align:justify; z-index:600;font-size:15px;padding:10px;font-family: Sans-Serif;color: black; opacity:.75;display:none;background-color:white; position:absolute;margin:418px auto auto 169px;width:558px;height:auto"></div>
+         
+         <input id="previousCake" type="button" onclick="previousCake()" value="<" style="z-index:550;display:none;position:absolute;left:70px;top:200px;color:white; background-color: rgb(104,0,0); height:140px; font-size:22px" > 
+        </input> 
+
+        <p style="display:none ;position:absolute;top:365px;left:352px;float:left;margin:auto;width:45%; height:70%"> </p>
+
+      <div id="img" class="img" >
+         <img class="onclick" src="image/7.jpg" data-title="Kangkung belacan<br>Spicy water spinach" alt="Kangkung belacan" onclick="bigImage(7)" 
+         style="width:205px;height:160px"> </img>
+      </div>
+
+      <div id="img" class="img">
+         <img class="onclick" src="image/8.jpg" data-title="Nasi lemak <br>椰浆饭" alt="Nasi lemak (Chinese: 椰浆饭)"  onclick="bigImage(8)"style="width:205px;height:160px"> 
+      </div>
+
+      <input id="nextCake" type="button" value=">"  onclick="nextCake()" style="z-index:550;display:none;background-color:rgb(104,0,0); color:white; position:absolute;left:810px;top:200px;height:140px;font-size:22px"> </input> 
+
+      <div id="img" class="img">
+         <img class="onclick" src="image/9.jpg" data-title="Bak Kut Teh<br>肉骨茶<br>Pork ribs soup" alt="Bak Kut Teh (Chinese : 肉骨茶) (pork ribs soup)"  onclick="bigImage(9)"style="width:205px;height:160px"> 
+      </div>
+      <div id="img" class="img">
+         <img class="onclick" src="image/10.jpg" alt="Yong tau foo" data-title="Yong tau foo<br>酿豆腐" alt = "Yong tau foo (Chinese : 酿豆腐)" onclick="bigImage(10)" style="width:205px;height:160px"> 
+      </div>
+      <div id="img" class="img">
+         <img class="onclick" src="image/11.jpg" data-title="Chicken Rendang"  alt="Chicken Rendang" title="Fish Curry <br>Ikan Kari" onclick="bigImage(11)" style="width:205px;height:160px"> 
+      </div>
+
+      <div id="img" class="img">
+         <img class="onclick" src="image/12.jpg" alt="Lemang" data-title="Lemang" onclick="bigImage(12)" style="width:205px;height:160px"> 
+      </div> 
+      <div id="img" class="img">
+         <img class="onclick" src="image/13.jpg" alt="Hainanese Chicken rice<br>海南雞飯" data-title="Hainan chicken rice<br> 海南鸡饭" onclick="bigImage(13)" style="width:205px;height:160px"> 
+      </div> 
+      <div id="img" class="img">
+         <img class="onclick" src="image/14.jpg" alt="Curry Mee" data-title="Curry Mee<br>咖喱面" onclick="bigImage(14)" style="width:205px;height:160px"> 
+      </div>
+      <div id="img" class="img">
+         <img class="onclick" src="image/15.jpg" alt="Asam Laksa" data-title="Assam laksa<br>亞三叻沙" onclick="bigImage(15)" style="width:205px;height:160px"> 
+      </div>
+      <div id="img" class="img">
+         <img class="onclick" src="image/16.jpg" alt="Nasi Kerabu" data-title="Kerabu rice" onclick="bigImage(16)" style="width:205px;height:160px"> 
+      </div>
+      <div id="img" class="img">
+         <img class="onclick" src="image/17.jpg" alt="Chow Kuey Teow 炒粿条" data-title="Chow Kuey Teow<br>炒粿条" onclick="bigImage(17)" style="width:205px;height:160px"> 
+      </div>
+      <div id="img" class="img">
+         <img class="onclick" src="image/18.jpg" alt="Roti canai " data-title="Roti Canai<br>印度煎饼" onclick="bigImage(18)" style="width:205px;height:160px"> 
+      </div>
+      <div id="img" class="img">
+         <img class="onclick" src="image/19.jpg" alt="Chai tow kway " data-title="Chai tow kway<br>萝卜糕" onclick="bigImage(19)" style="width:205px;height:160px"> 
+      </div>
+      <div id="img" class="img">
+         <img class="onclick" src="image/20.jpg" alt="Hakka Pounded Tea (Chinese: 擂茶)" data-title="Hakka Pounded Tea<br>客家擂茶" onclick="bigImage(20)" style="width:205px;height:160px"> 
+      </div>
+      <div id="img" class="img">
+         <img class="onclick" src="image/21.jpg" alt="Fried rice noodle (Chinese: 星洲炒米粉)" data-title="Fried rice noodle<br>星洲炒米粉" onclick="bigImage(21)" style="width:205px;height:160px"> 
+      </div>
+      <div id="img" class="img">
+         <img class="onclick" src="image/22.jpg" alt="Yusheng" data-title="Yusheng<br>鱼生" onclick="bigImage(22)" style="width:205px;height:160px"> 
+      </div>
+      <div id="img" class="img">
+         <img class="onclick" src="image/23.jpg" alt="Biryani" data-title="Biryani Rice" onclick="bigImage(23)" style="width:205px;height:160px"> 
+      </div>
+      <div id="img" class="img">
+         <img class="onclick" src="image/24.jpg" alt="Murtabak" data-title="Murtabak" onclick="bigImage(24)" style="width:205px;height:160px"> 
+      </div>
+          
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/25.jpg" alt="Bubur Cha Cha" data-title="Bubur Cha Cha<br>摩摩喳喳" onclick="bigImage(25)" style="width:200px;height:160px"> 
+      </div> 
+
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/26.jpg" alt="Ais Kacang " data-title="Ais Kacang<br>红豆冰" onclick="bigImage(26)" style=" width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/27.jpg" alt="Red tortoise cake" data-title="Tortoise cake<br>Ang-Ku" onclick="bigImage(27)" style=" width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/28.jpg" alt="Cendol" data-title="Cendol" onclick="bigImage(28)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/29.jpg" alt="Taro cake (Chinese : 芋头糕)" data-title="Taro cake<br>芋头糕" onclick="bigImage(29)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/30.jpg" alt="Seri Muka" data-title="Two layered cake<br>Seri muka" onclick="bigImage(30)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/31.jpg" alt="Kuih Kapit" data-title="Kuih Kapit<br>鸡蛋卷" onclick="bigImage(31)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/32.jpg" alt="Curry puff " data-title="Curry puff<br>咖喱角" onclick="bigImage(32)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/33.jpg" alt="Peanut pancake" data-title="Peanut pancake<br>Apam balik" onclick="bigImage(33)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/34.jpg" alt="Durians" data-title="Durian<br>榴莲" onclick="bigImage(34)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/35.jpg" alt="Onde-onde" data-title="Onde-onde" onclick="bigImage(35)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/36.jpg" alt="Otak-otak" data-title="Otak-otak" onclick="bigImage(36)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/37.jpg" alt="Rojak " data-title="Rojak<br>水果啰喏" onclick="bigImage(37)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/38.jpg" alt="Steamed Layer Cake" data-title="Steamed Layer Cake" onclick="bigImage(38)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/39.jpg" alt="Popiah" data-title="Popiah" onclick="bigImage(39)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/40.jpg" alt="Kuih sago" data-title="Kuih sago" onclick="bigImage(40)" style="width:200px;height:160px">
+      </div> 
+      <div id="weddingCakeImage" class="weddingCakeImage" style="display:none">
+        <img class="onclick2" src="image/41.jpg" alt="Kuih Dadar " data-title="Kuih Dadar " onclick="bigImage(41)" style="width:200px;height:160px">
+      </div> 
+      <input id="up" disabled type="button" title="null" style="background-color:#606060; opacity:0.4;color:white; margin-top:406px; margin-left :26px;padding:6px 9px;font-size:12px;" value="^"; position="fixed" onclick="scrollUp()"> </input>
+      <br>
+      <input id="down" type="button" title="null" style="background-color:#606060; color:white; margin-top:5px;margin-left:26px; padding:6px 9px;font-size:12px" value="v" position="fixed" onclick="scrollDown()"> </input> 
+      <img id="bigImage"  src="" alt="Old Fashioned Apple"   style="z-index:550; display:none;margin-left:0px;top:22px;left:169px;float:left;height:520px; width:580px; position:absolute"> </img>
+        
+    </div>  <div id="footer" style="bottom:0px">
+        Images in this school project are only for illustrative purposes.     
+    </div> 
+  </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>  
+
+$(document).ready(function(){
+   $(".img").fadeIn("slow");
+ 
+    var t;
+    $('div.img img').hover(function(){  
+      var textTopPosition = $(this).position().top+17;  
+      var textLeftPosition = $(this).position().left+6; 
+      t = $('<div/>')
+          .css({top:textTopPosition})
+          .css({left:textLeftPosition})
+          .html($(this).data('title'))
+          .appendTo($(this).parent());  
+      $(this).fadeTo('fast',0.3);
+      });
+
+     $('div.img').mouseleave(function(){
+         $(this).find("img").fadeTo('fast',1);
+         $(this).find("div").remove();
+    }); 
+
+    $('div.weddingCakeImage img').hover(function(){  
+      var textTopPosition = $(this).position().top+17;  
+      var textLeftPosition = $(this).position().left+6; 
+      t = $('<div/>')
+          .css({top:textTopPosition})
+          .css({left:textLeftPosition})
+          .html($(this).data('title'))
+          .appendTo($(this).parent());     
+        $(this).fadeTo('fast',0.3);
+      });
+
+    $('div.weddingCakeImage').mouseleave(function(){
+         $(this).find("img").fadeTo('fast',1);
+         $(this).find("div").remove();
+    });})  
+  
+    var main_secondPage=false;
+    var desserts_secondPage=false;
+
+    function scrollDown(){  
+      document.getElementById("down").disabled=true;
+      document.getElementById("down").style.opacity="0.4";
+      document.getElementById("up").disabled= false ;
+      document.getElementById("up").style.opacity="1.0";  
+
+      if(document.getElementById("down").getAttribute("title")!="desserts") {
+        var bakeryImages=document.getElementsByClassName("img");
+        for(y=0; y<12; y++){ 
+          bakeryImages[y].style.display="none"; 
+          main_secondPage=true;
+        } 
+      }
+      else{
+        var desserts=document.getElementsByClassName("weddingCakeImage");
+        for(y=0; y<5; y++){ 
+          desserts[y].style.display="none"; 
+          desserts_secondPage=true;
+        } 
+      }
+       //$(".img").fadeIn().css("display","inline");   
+    }
+
+    function scrollUp(){
+      document.getElementById("up").style.opacity="0.4"; 
+      document.getElementById("up").disabled=true;
+      document.getElementById("down").style.opacity="1.0";
+      document.getElementById("down").disabled=false;  
+      if(document.getElementById("down").getAttribute("title")!="desserts") {
+        var bakeryImages=document.getElementsByClassName("img");
+        for(y=0; y<12; y++){ 
+          bakeryImages[y].style.display="inline"; 
+          main_secondPage=false;
+        } 
+      } 
+      else{
+        var desserts=document.getElementsByClassName("weddingCakeImage");
+        for(y=0; y<5; y++){ 
+          desserts[y].style.display="inline"; 
+          desserts_secondPage=false;
+        }
+      }
+       // document.getElementById("down").style.marginLeft ="27px";
+           //$(".img").fadeIn("slow");
+    }
+
+    function bigImage(image){ 
+      document.getElementById("close").style.display="inline";
+      document.getElementById("infor").style.display="inline";    
+      document.getElementById("bigImage").style.display="inline";   
+      document.getElementById("previousCake").style.display="inline";  
+      document.getElementById("nextCake").style.display="inline";  
+        document.getElementById("bakeryButton").disabled=true;
+        document.getElementById("weddingButton").disabled=true;
+
+      if(document.getElementById('nextCake').disabled==true){
+        document.getElementById('nextCake').disabled=false;
+       document.getElementById('nextCake').style.opacity=1; 
+
+      }
+
+      if(document.getElementById('previousCake').disabled==true){
+        document.getElementById('previousCake').disabled=false;
+        document.getElementById('previousCake').style.opacity=1; 
+      }
+
+      if(image==1||image==25){
+        document.getElementById("previousCake").style.opacity=0.3;
+        document.getElementById("previousCake").disabled=true;  
+      }
+      if(image==24||image==41){
+        document.getElementById("nextCake").style.opacity=0.3; 
+        document.getElementById("nextCake").disabled=true;
+      }      
+      var imageType =".jpg";
+      var directory="image/";
+      var thePath=directory+image+imageType;   
+      document.getElementById("bigImage").setAttribute("src", thePath);  
+       
+      var z = "closeIt("+ image +")";
+      var next="nextCake("+image+")";
+      var prev ="previousCake("+image+")";
+      document.getElementById("close").setAttribute("onclick", z);
+      document.getElementById("cover").style.display="inline";
+      /*
+
+      document.getElementById("weddingCakeImage").style.opacity=".3"; 
+      document.getElementById("weddingButton").style.opacity=".25"; 
+      document.getElementById("bakeryButton").style.opacity=".25"; 
+
+      for(i=0; i<document.getElementsByClassName("onclick").length;i++){
+      document.getElementsByClassName("onclick")[i].style.opacity=".25";   
+     
+      //document.getElementsByClassName("img")[i].removeAttribute("onclick");//prop("onclick", null);
+      }     
+      for(i=0; i<document.getElementsByClassName("onclick2").length;i++){
+      document.getElementsByClassName("onclick2")[i].style.opacity=".25";  
+
+      //document.getElementsByClassName("onclick2")[i].removeAttr('title');  
+      //document.getElementsByClassName("img")[i].removeAttribute("onclick");//prop("onclick", null);
+      } 
+      //$(".img").off('onclick');     
+      
+      $(".onclick").prop("onclick",null); 
+      $(".onclick2").prop("onclick",null);
+
+      document.getElementById("up").style.opacity=".3";
+      document.getElementById("down").style.opacity=".3"; 
+      document.getElementById("up").disabled=true;
+      document.getElementById("down").disabled=true; 
+      $('div.weddingCakeImage img').hover(function(){   
+        $(this).stop();//.animate({opacity: .25}, 2); 
+        //$(this).'<div/>'.remove();
+      })
+      $('div.img img').hover(function(){ 
+       // $(this).getAttribute('div').hidden="true";
+        $(this).stop();//.animate({opacity: .25}, 2); 
+        //$(this).removeAttr('title');
+
+      })*/
+    } 
+    
+function nextCake(){  
+  if(document.getElementById('previousCake').disabled==true){
+    document.getElementById('previousCake').disabled=false;
+    document.getElementById('previousCake').style.opacity="1.0";   
+  }
+
+  
+  var imageType =".jpg"; 
+  var src =document.getElementById("bigImage").src;  
+  var array=src.split("/"); 
+  var path=array[array.length-1].split(".");
+  var imageNumber=path[0];  
+  var imageNumber=parseInt(imageNumber); 
+   
+  var nextImage=imageNumber+1;  
+  var directory="image/";
+  if (nextImage==24||nextImage==41){
+      document.getElementById('nextCake').disabled=true;
+      document.getElementById('nextCake').style.opacity="0.3"; 
+  }
+ 
+  var thePath=directory+nextImage+imageType;  
+ 
+  $("#bigImage").fadeTo(1000,0.3,function(){
+    $("#bigImage").attr("src", thePath);
+  }).fadeTo(500,1);  
+
+ if(document.getElementById('words').style.display=="block"){ 
+     $("#words").fadeTo(1000,0.3,function(){
+      changeWord(nextImage);
+  }).fadeTo(500,.75);  
+  }   
+} 
+
+function previousCake(){  
+    if(document.getElementById('nextCake').disabled==true){
+      document.getElementById('nextCake').disabled=false;
+      document.getElementById('nextCake').style.opacity="1.0";   
+    }
+    
+    var imageType =".jpg";
+    var src =document.getElementById("bigImage").src;  
+    var array=src.split("/"); 
+    var path=array[array.length-1].split(".");
+    var imageNumber=path[0];  
+    var prevImage=imageNumber-1; 
+
+    if (prevImage<2||prevImage==25){ 
+        document.getElementById('previousCake').disabled=true;
+        document.getElementById('previousCake').style.opacity="0.3";      
+    } 
+    var directory="image/";
+    var thePath=directory+prevImage+imageType; 
+     
+    $("#bigImage").fadeTo(1000,0.3,function(){
+    $("#bigImage").attr("src", thePath);
+    }).fadeTo(500,1);
+    if(document.getElementById('words').style.display=="block"){ 
+    changeWord(prevImage);
+  }
+} 
+
+  function closeIt(image){   
+    document.getElementById("close").style.display="none";
+    document.getElementById("infor").style.display="none";
+    document.getElementById("words").style.display="none"; 
+    document.getElementById("bigImage").style.display="none"; 
+    document.getElementById("weddingButton").style.opacity="1.0"; 
+    document.getElementById("bakeryButton").style.opacity="1.0"; 
+    document.getElementById("previousCake").style.display="none";    
+    document.getElementById("nextCake").style.display="none"; 
+    document.getElementById("bakeryButton").disabled=false;
+    document.getElementById("weddingButton").disabled=false;
+
+
+document.getElementById("cover").style.display="none"; 
+/*
+    var x=document.getElementsByClassName("onclick");
+    x[0].setAttribute("onclick", "bakeryImages()");
+    x[1].setAttribute("onclick", "weddingImages()");
+    var infor = "informa("+ image+")";
+    document.getElementById("infor").setAttribute("onclick", infor);
+    
+  if(image<23){  
+    if(main_secondPage==false){ 
+       document.getElementById("up").disabled= true ;
+       document.getElementById("up").style.opacity=".4";
+       document.getElementById("down").disabled= false ;
+       document.getElementById("down").style.opacity="1";
+    }   
+    else{ 
+      document.getElementById("up").style.opacity="1.0";
+      document.getElementById("up").disabled= false ; 
+    } 
+ }else{
+    if(desserts_secondPage==false){ 
+    document.getElementById("up").disabled= true ;
+    document.getElementById("up").style.opacity=".4";
+    document.getElementById("down").disabled= false ;
+    document.getElementById("down").style.opacity="1";
+    }   
+    else{  
+    document.getElementById("up").style.opacity="1.0"; 
+    document.getElementById("up").disabled= false ;
+    } 
+}
+
+ 
+    for(i=0; i<document.getElementsByClassName("onclick").length; i++){
+      document.getElementsByClassName("onclick")[i].style.opacity="1";  
+      //document.getElementsByClassName("img")[i].removeAttribute("onclick");//prop("onclick", null);
+    }     
+    for(i=0; i<document.getElementsByClassName("onclick2").length; i++){
+      document.getElementsByClassName("onclick2")[i].style.opacity="1";  
+      //document.getElementsByClassName("img")[i].removeAttribute("onclick");//prop("onclick", null);
+    } 
+
+    if(image < 23){
+      var k=image+1;   
+    } else {
+      console.log(image-5);
+     // var k=image-5;
+    }
+    //document.getElementsByClassName("onclick")[k].style.opacity="1.0"; 
+
+    for(i=2; i< x.length; i++){
+      j=i-1;
+      var y="bigImage("+ j+")";
+      x[i].setAttribute("onclick",y);  
+   }
+  
+  var y=document.getElementsByClassName("onclick2");
+    
+  for(i=0; i< y.length; i++){
+      l=i+23;
+      var z="bigImage("+ l+")";
+      y[i].setAttribute("onclick",z);  
+   }
+
+ 
+    var t;
+    $('div.img img').hover(function(){ 
+      var textTopPosition = $(this).position().top+17;  
+      var textLeftPosition = $(this).position().left+6; 
+      t = $('<div/>')
+          .css({top:textTopPosition})
+          .css({left:textLeftPosition})
+          .text($(this).attr('title'))
+          .appendTo($(this).parent());     
+        $(this).fadeTo('fast',0.3);
+      },function(){
+         $(this).fadeTo('fast',1);
+         $(t).remove();
+    }); 
+
+$('div.weddingCakeImage img').hover(function(){  
+      var textTopPosition = $(this).position().top+17;  
+      var textLeftPosition = $(this).position().left+6; 
+      t = $('<div/>')
+          .css({top:textTopPosition})
+          .css({left:textLeftPosition})
+          .text($(this).attr('title'))
+          .appendTo($(this).parent());     
+        $(this).fadeTo('fast',0.3);
+      },function(){
+         $(this).fadeTo('fast',1);
+         $(t).remove();
+    }); 
+
+ for(i=0; i<document.getElementsByClassName("img").length;i++){
+      document.getElementsByClassName("img")[i].style.opacity="1.0";  
+     }  
+
+    for(i=0; i<document.getElementsByClassName("weddingCakeImage").length;i++){
+      document.getElementsByClassName("weddingCakeImage")[i].style.opacity="1.0";   
+    } 
+*/
+
+  }
+
+  function bakeryImages(){
+    document.getElementById("bakeryButton").disabled = true;
+    document.getElementById("weddingButton").disabled = false;
+   document.getElementById("bakeryButton").style.cursor="default";
+   document.getElementById("weddingButton").style.cursor="pointer";
+   
+   document.getElementById("down").setAttribute("title", "");
+    document.getElementById("up").setAttribute("title", "");
+    $(".weddingCakeImage").fadeOut("slow",function(){
+      $(".weddingCakeImage").css("display","none");});
+
+    $(".img").fadeIn("slow",function(){
+      $(".img").css("display","inline-block");});
+    
+    document.getElementById("up").style.display="fixed";
+    document.getElementById("down").style.display="fixed"; 
+    //document.getElementById("down").style.marginLeft ="470px"; 
+      
+   document.getElementById("up").disabled= true ;
+   document.getElementById("up").style.opacity=".4";
+   document.getElementById("down").disabled= false ;
+   document.getElementById("down").style.opacity="1";  
+     
+  }
+
+  function weddingImages(){  
+    document.getElementById("bakeryButton").disabled = false;
+    document.getElementById("weddingButton").disabled = true;
+      document.getElementById("weddingButton").style.cursor="default";
+      document.getElementById("bakeryButton").style.cursor="pointer";
+     
+    document.getElementById("down").setAttribute("title", "desserts");
+    document.getElementById("up").setAttribute("title", "desserts");
+    var bakeryImages=document.getElementsByClassName("img");
+    for(y=0; y<bakeryImages.length; y++){ 
+
+      bakeryImages[y].style.display="none"; 
+    }
+     
+    $(".weddingCakeImage").fadeIn().css("display","inline"); 
+    
+    document.getElementById("up").style.display="fixed";
+    document.getElementById("down").style.display="fixed";
+    
+     document.getElementById("up").disabled= true ;
+       document.getElementById("up").style.opacity=".4";
+       document.getElementById("down").disabled= false ;
+       document.getElementById("down").style.opacity="1"; 
+    //$("#img1").attr("src").replace("1.png", "W1");
+  }
+ 
+  function informa(image){ 
+    if(document.getElementById("words").style.display=="block"){
+      document.getElementById("words").style.display="none"; 
+    }
+    else{ 
+      document.getElementById("words").style.display="block";
+      var src =document.getElementById("bigImage").src;  
+      var array=src.split("/"); 
+      var path=array[array.length-1].split(".");
+      var image=path[0];
+      changeWord(image);
+      // $("#words").fadeIn("slow");
+    }  
+ }
+
+ function changeWord(image){
+   
+  var matches_array=parseInt(image);
+
+    switch(matches_array){ 
+      case 1:
+        document.getElementById("words").innerHTML="PanMee (Chinese : 板面), noodles soup with hand-kneaded noodles served with minced pork, a poached egg, fried anchovies and fried chilli flakes.";  
+        break;
+      case 2:
+        document.getElementById("words").innerHTML="Wonton Mee (Chinese : 雲吞麵) - thin egg noodles with boiled or deep-fried wonton dumplings (Chinese : 雲吞), choy sum and char siu. The dumplings are usually made of pork or prawns, and typically boiled or deep fried. The noodles may be served in a bowl of broth with dumplings as in the traditional Cantonese manner.";  
+        break;
+      case 3:
+        document.getElementById("words").innerHTML="Satay is a dish of seasoned, skewered and grilled meat, served with spicy peanut sauce, slivers of onions, cucumbers, and rice cakes. "  + '<a href="http://travel.cnn.com/explorations/eat/worlds-50-most-delicious-foods-067535">It is listed at number 14 on <em>World&#39s 50 most delicious foods complied by CNN Go</em> in 2011</a>'; 
+        break;
+      case 4:
+        document.getElementById("words").innerHTML="Hokkien Mee (Chinese : 福建炒麵). A dish of thick yellow noodles braised and fried with thick black soy sauce and crispy lardons.";  
+        break; 
+      case 5:
+        document.getElementById("words").innerHTML="Cantonese fried noodles (Chinese : 廣府炒) refers to a preparation of noodles which are shallow or deep fried to a crisp, then served as the base for a thick egg and cornstarch white sauce cooked with sliced lean pork, seafood, and green vegetables like choy sum.";  
+        break;
+      case 6:
+        document.getElementById("words").innerHTML="Ngah Po Fan (Chinese : 瓦煲飯) - seasoned rice cooked in a claypot with secondary ingredients, and finished with soy sauce. A typical example is rice cooked with chicken, salted fish, Chinese sausage, and vegetables. Claypots are also used for braising noodles, meat dishes and reducing soups.";  
+        break; 
+      case 7:
+        document.getElementById("words").innerHTML="Kangkung belacan. It is stir fried with a pungent sauce made from belacan (shrimp paste) and hot chilli peppers.";  
+        break;
+      case 8:
+        document.getElementById("words").innerHTML="Nasi lemak (Chinese: 椰浆饭)is a fragrant rice dish cooked in coconut milk and 'pandan' leaf. This traditional favourite is served with various side dishes, including hard-boiled egg, fresh cucumber slices, roasted peanuts, small fried anchovies, and hot spicy sauce (sambal belacan), wrapped in banana leaves.";    
+        break; 
+      case 9:
+        document.getElementById("words").innerHTML="Bak Kut Teh (Chinese : 肉骨茶) (pork ribs soup). The root meaning for the dish, 'Bak Kut' (Hokkien dialect) is the term for meaty ribs, at its simplest cooked with garlic, dark soy sauce and a specific combination of herbs and spices which have been boiled for many hours.";  
+        break;
+      case 10:
+        document.getElementById("words").innerHTML= "Yong tau foo (Chinese : 酿豆腐) is a Hakka Chinese food consisting of tofu products and vegetables like brinjals, lady's fingers, bitter gourd and chillies stuffed with fish or pork paste."; 
+        break;
+      case 11:
+        document.getElementById("words").innerHTML="Rendang, a spicy meat and coconut milk stew. It is traditionally prepared by the Malay community during festive occasions, served with ketupat or nasi minyak.";  
+        break;
+      case 12:
+        document.getElementById("words").innerHTML="Lemang is made of glutinous rice, coconut milk and salt, and cooked in a hollowed bamboo stick lined with banana leaves."+'<a href="https://www.youtube.com/watch?v=ANZLzX6OQ84">Watch the video here</a>';  
+        break; 
+      case 13:
+        document.getElementById("words").innerHTML="Hainanese Chicken rice (Chinese : 海南雞飯) is prepared with the same traditional method used for cooking Wenchang chicken. The dish is simple: bite-sized pieces of steamed or blanched white chicken, fragrant rice (often cooked in chicken broth with pandan leaves added), light or dark soy sauce, and a delicious ground chilli and ginger paste.";  
+        break; 
+      case 14:
+        document.getElementById("words").innerHTML="Curry Mee (Chinese : 咖喱面). A bowl of thin yellow noodles mixed with bihun in a spicy curry soup enriched with coconut milk, and topped with tofu puffs, prawns, cuttlefish, chicken, long beans, cockles and mint leaves, with sambal served on the side. It is often referred to as curry laksa."; 
+        break; 
+      case 15:
+        document.getElementById("words").innerHTML="Asam Laksa (亞三叻沙) is a popular spicy and sour fish-based noodle soup, topped off with thick sweet prawn/shrimp paste (蝦羔). " + '<a href="http://travel.cnn.com/explorations/eat/worlds-50-most-delicious-foods-067535"> It is listed at number 7 on <em>World&#39s 50 most delicious foods complied by CNN Go</em> in 2011</a>'+". The main ingredients include shredded fish, and finely sliced vegetables including cucumber, onions, red chillies, pineapple, lettuce, and common mint.";  
+        break; 
+      case 16:
+        document.getElementById("words").innerHTML="Nasi Kerabu is a Malay rice dish, cooked with clitoria ternatea flowers or turmeric, various herbs, and anchovy sauce. It is served with fish meat-stuffed pepper, salted egg, crackers, fried chicken, pickles and salads.";  
+        break; 
+      case 17:
+        document.getElementById("words").innerHTML="Char Kway Teow (Chinese: 炒粿條) is made from flat rice noodles (河粉), The dish is traditionally stir-fried with soy sauce, chilli, belachan, whole prawns, de-shelled cockles, bean sprouts, chopped Chinese chives, egg, slices of Chinese sausage and fishcake, and commonly served on a piece of banana leaf on a plate."
+        break; 
+      case 18:
+        document.getElementById("words").innerHTML="Roti canai is sometimes referred to as 'flying bread' or Indian pancake (印度煎饼). It is commonly consumed with curries, as a dipping sauce or poured upon the roti."
+        break;  
+      case 19:
+        document.getElementById("words").innerHTML="Chai tow kway (Chinese: 萝卜糕), also known as 'fried carrot cake'. It is made with radish cake (steamed rice flour, water, and shredded white daikon), which has then been stir-fried with eggs, preserved radish, and other seasonings.";  
+        break;
+      case 20:
+        document.getElementById("words").innerHTML="Hakka Pounded Tea (Chinese: 擂茶), an assortment of tea leaves (usually green tea), peanuts, mint leaves, sesame seeds, mung beans and other herbs) are pounded or ground into a fine powder, as a dietary brew to be taken with rice and other vegetarian side dishes such as greens, tofu, and pickled radish." + '<a href="https://www.youtube.com/watch?v=Q6IhMgNKZdY">Watch the video here</a>'; 
+        break;  
+      case 21:
+        document.getElementById("words").innerHTML="Fried rice noodle (Chinese: 星洲炒米粉)，常見於香港和馬來西亚. 星洲炒米的「星洲」是指新加坡，然而在新加坡卻沒有這種名稱的炒米粉. 香港的星洲炒米和馬來西亞的炒米是有明顯分別，香港的星洲炒米一定會加入咖哩，馬來西亞的炒米卻使用番茄醬和辣椒醬代替。 星洲炒米的材料通常包括蝦、叉燒和雞蛋，並按照不同地區的烹調習慣，加入芽菜、辣椒絲、蕃茄醬或咖哩醬等食材。"
+        break;  
+      case 22:
+        document.getElementById("words").innerHTML="Yusheng (Chinese: 鱼生). Its consumption has been associated with Chinese New Year festivities. It usually consists of strips of raw fish (most commonly salmon), mixed with shredded vegetables and a variety of sauces and condiments, among other ingredients.";  
+        break;  
+
+      case 23:
+        document.getElementById("words").innerHTML="Biryani, is a mixed rice dish from the Indian Subcontinent. It is made with spices, rice and meat or vegetables.";  
+        break;
+      case 24:
+        document.getElementById("words").innerHTML="Murtabak, is a stuffed pancake or pan-fried bread. It usually includes minced meat (beef or chicken, sometimes mutton) along with garlic, egg and onion, and is eaten with curry or gravy, sliced cucumber, syrup-pickled onions or tomato sauce.";  
+        break;  
+      case 25:
+        document.getElementById("words").innerHTML="Bubur Cha Cha (Chinese: 摩摩喳喳) is one of the more well-known Nyonya desserts, a medley of sweet potatoes (in yellow, orange, and purple color), yam (taro), black-eye peas, etc., cooked in a sweet coconut milk base.";  
+        break; 
+      case 26:
+        document.getElementById("words").innerHTML="Ais Kacang (Chinese: 红豆冰) is made of shaved ice, red beans, sweet corn, grass jelly, and cubes of agar-agar. A final topping of evaporated milk, condensed milk, or coconut milk is drizzled over the mountain of ice along with red rose syrup and sarsi syrup.";  
+        break;  
+      case 27:
+        document.getElementById("words").innerHTML="Red tortoise cake (Chinese: Âng-Ku-Kóe) is a small round or oval shaped Chinese pastry with soft sticky glutinous rice flour skin wrapped around a sweet filling in the centre. It is molded to resemble a tortoise shell and is presented resting on a square piece of banana leaf.";  
+        break;  
+      case 28:
+        document.getElementById("words").innerHTML="Cendol is a traditional sweet ice-beverage made from green jelly, coconut milk, shredded ice, and coconut sugar.  Other ingredients such as red beans, glutinous rice, grass jelly, creamed corn, might also be included. Jelly noodles are made from rice flour with pandan leaves.";  
+        break;  
+      case 29:
+        document.getElementById("words").innerHTML="Taro cake (Chinese : 芋粿)- a steamed savoury cake made from pieces of taro, dried prawns and rice flour. It is then topped with deep fried shallots, spring onions, sliced chilli and dried prawns, and usually served with a chilli dipping sauce.";  
+        break;
+      case 30:
+        document.getElementById("words").innerHTML="Seri Muka - a two-layered kuih with steamed glutinous rice forming the bottom half and a green custard layer made with pandan juice. Coconut milk is a key ingredient in making this kuih. It is used to impart creamy taste when cooking the glutinous rice and making the custard layer.";  
+        break;  
+      case 31:
+        document.getElementById("words").innerHTML="Kuih Kapit (Chinese:鸡蛋卷), is a crispy folded coconut-flavoured wafer biscuits, colloquially known as 'love letters'";  
+        break; 
+      case 32:
+        document.getElementById("words").innerHTML="Curry puff (Chinese: 咖哩角) is a small pie consisting of curry with chicken, onions, and potatoes in a deep-fried or baked pastry shell";  
+        break;  
+      case 33:
+        document.getElementById("words").innerHTML="Peanut pancake, choose between two versions, thin and crispy or thick and cakey. It is filled with peanuts, sugar, sweetcorn, and a dash of butter."+ '<a href="http://lilyng2000.blogspot.com/2007/05/apam-balik.html"> Get the recipe here</a>';  
+        break; 
+      case 34:
+        document.getElementById("words").innerHTML="Durians (Chinese: 榴莲), a fruit with a spiky outer shell and a characteristic odour is a local tropical fruit that is notable because it provokes strong emotions either of loving it or hating it. It is also known as the 'King of the Fruits'.";   
+        break;  
+      case 35:
+        document.getElementById("words").innerHTML= "Onde-onde is a boiled rice cake, stuffed with palm sugar, and rolled in grated coconut. It is also flavored with a paste made from the pandan.";
+        break;  
+      case 36:
+        document.getElementById("words").innerHTML="Otak-otak, is a snack made up of minced fish meat and spices. It is widely popular across SoutheastAsia, where it is traditionally served fresh and wrapped inside a banana leaf or coconut leaf.";  
+        break;  
+      case 37:
+        document.getElementById("words").innerHTML="Rojak (Chinese: 水果啰喏) is a traditional fruit and salad dish that means wild mix in Malay, and is popular as a starter or a fresh meal on its own. Built on a varied assortment of fruits and fresh vegetables. ";  
+        break; 
+      case 38:
+        document.getElementById("words").innerHTML="Steamed Layer Cake";
+        break;
+      case 39:
+        document.getElementById("words").innerHTML="Popiah,- Hokkien/Teochew-style crepe stuffed and rolled up with cooked shredded tofu and vegetables like turnip and carrots." ;
+        break;
+      case 40:
+        document.getElementById("words").innerHTML="Kuih sago";
+      break;
+      case 41:
+        document.getElementById("words").innerHTML="Kuih Dadar is a rolled crepe flavored with pandan juice and filled with grated coconut steeped in palm sugar. The green exterior of kuih dadar is made of batter colored with natural pandan juice extracted from pandan leaves. ";
+        break; 
+    }  
+}  
+  
+  </script>
+  </body>
+
+</html>

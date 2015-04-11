@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61580508-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <title>Jeen&#39s Kitchen</title>
+	<link rel="stylesheet" type="text/css" href="css/HW1_problem2.css">
+  <style>
+  #close{
+    cursor:pointer;
+  }
+  </style>
+</head>
+
+<body background="image/p25.jpg" style="background-size: 100%;  background-repeat:no-repeat" >
+  <div id="container">
+    <div id="block1">     
+      <div id="header_left"> 
+           Jeen&#39s Kitchen
+      </div>
+
+        <div id="header_right">
+        <ul class="nonDropDown">
+          <li id="navBar"><a href="home.html">Home </a> </li>
+          <li id="navBar"><a href="about.html" >About Us</a></li>
+          <li id="navBar"><a id="active" >News</a></li>
+          <li id="navBar"><a href="gallery.html" >Food Gallery</a></li> 
+          
+          <li id="menu"><a href="#" >Menus</a>
+            <ul id="subitem" class = "dropdown">
+              <li ><a href="image/1.pdf">LUNCH MENU</a> </li>
+              <li ><a href="image/2.pdf">DINNER MENU</a> </li>
+            </ul> 
+          </li>
+
+          <li id="navBar"><a href="contactUs.html">Contact Us</a> </li>
+        </ul>
+      </div>
+      
+      <div style="background-color:white; height:570px;opacity:0.4 ;float:left; margin-top:0px;   width:956px; "></div> 
+
+      <div id="click"  onmouseover="clearView(this)" onmouseout="transparent(this)" style="width:617px; opacity:0.80 ; position:absolute;background-color:white;padding-left:250px;max-height: 181px;top:170px;margin-left:45px; ">   
+          <span style="text-allign:justify;word-break:keep-all;margin-top:16px;font-family:monospace;font-size:15px">  
+          <br> <strong>March 1 2015: </strong><br><br> This web site was created for school project 
+          <br><br><br><br><br><br><br>
+         </span>
+      </div>
+      <img id="img" src="image/p4.jpg" style="top:168px;margin-left:15px;width:200px;height:181px; float:left; position: absolute"></img>
+
+      <div id="footer2"  style="position:absolute;margin-left:43px;background-color:white; color:black;width:867px; height: 181px;">
+         <img id="close" src="close.png" onclick="closeIt()" alt="close" style="display:flex; top:0px;right:0px;height:25px; width:25px; position:absolute"> </img>     
+        <img id="new_img" src="image/p20.jpg" style="float:left;width:200px;height:178px;margin-rigt:200px;"> </img>
+        <div id="new" style="text-allign:justify;padding-left:248px;top:0px;font-family:monospace;font-size:15px" > 
+            <br><br> <strong>Technology used:</strong><br> <br>HTML<br> CSS<br> JavaScript<br> JQuery <br><br><br><br><br><br><br> 
+        </div>
+      </div>    
+      <div id="footer">
+       Images in this school project are only for illustrative purposes.       
+    </div>
+    </div>      
+</body>
+<script >
+$(document).ready(function(){
+  $("#click").fadeIn("slow");
+  $("#img").fadeIn("slow");  
+  $('#footer2').hide();
+});
+var hidden = true;animating = false;
+var contentHeight = $('#footer2').height(); 
+(function($) { 
+    $('#footer2').css('bottom',-contentHeight);   
+
+  $("#click").click(function(e){  
+    e.preventDefault();
+     $('#footer2').show();
+      animating=true; 
+      if(hidden){ 
+        $('#footer2').animate({
+          bottom: $(window).height()-172-contentHeight  
+         // $('#footer2').hide();   
+        },800,function() {
+          animating = false;
+          hidden = false; 
+
+          }); 
+      }})
+   }(jQuery))
+
+    function clearView(x){ 
+        document.getElementById("click").style.opacity=1.0;
+    }
+
+    function closeIt(){    
+          $('#footer2').animate({
+                  bottom:-contentHeight
+              },800,function() {
+                  animating = false;
+                  hidden = true; 
+                  $('#footer2').hide(); 
+          });
+        
+
+        //$("#new").slideUp("easeInOutQuart"); 
+        //$("#close").slideUp("easeInOutQuart");
+        
+    /* document.getElementById("close").style.display="none";
+     document.getElementById("new").style.display="none";
+     document.getElementById("img").src="flower.png";*/
+    }
+
+    function transparent(x){
+      document.getElementById("click").style.opacity=0.85;
+    }
+</script>
+</html>

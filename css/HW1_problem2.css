@@ -1,0 +1,228 @@
+@CHARSET "UTF-8";
+#imageWrap { 
+    width: 640px; 
+    height: 420px; 
+    background: url('ajax-loader.gif') center center no-repeat; 
+}
+
+
+#container{
+    background-color:transparent;
+    opacity:1;
+    filter:alpha(opacity=80);
+    height:100%;
+    width:956px;  
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20px;
+    margin-bottom:50px;
+}
+
+#block1 {
+    height:300px;
+    opacity:1.0;
+}
+
+#header_left{
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+    color: brown;
+    background-color:white;
+    height:50px;
+    width:920px;
+    float:right;
+    font:bold 50px 'Brush Script MT Italic','Xingkai SC Bold',Gabriola,'grafolita script',  serif, sans-serif; 
+    text-align:right;
+    line-height:50px; 
+    padding:18px 36px 0px 0px  
+}
+
+#header_right{
+    background-color:white; 
+    height:50px;
+    width:956px;
+    float:right;
+    font: 12px sans-serif; 
+    text-transform: uppercase;
+}
+
+#active{
+    background-color: #666699 !important;
+    color:white !important;
+    padding: 12px ;
+    cursor:default;
+    text-decoration:none; 
+}
+#header_right ul { 
+    margin-right: 30px;
+  font-family: Arial, Verdana;
+  font-size: 14px;
+  padding: 0;
+  float:right;
+  list-style: none;}
+#header_right ul li {
+  display: block;
+  position: relative;
+  float: left;
+}
+#header_right li ul {
+    display: none; }
+#header_right ul li a {
+  display: block;
+  text-decoration: none;
+  color: #666699 ; 
+  padding: 12px 15px 8px 15px;
+  white-space: nowrap;}
+#header_right ul li a:hover { 
+  background-color: #666699 ;
+  color:white;
+}
+
+#header_right li:hover ul {
+  display: block;
+  position: absolute;
+  z-index: 1000;
+}
+#header_right li:hover ul li {
+  float: none;
+  background-color: #666699;
+}
+
+#menu:hover > * {   
+    background-color: #666699; 
+    color: white; 
+}
+  #header_right li:hover ul li a{ 
+  color: white;
+  }
+#header_right ul li :hover  li a:hover {
+  background:#7575a3; 
+  }
+  
+#news_box{
+    background-color:white;
+    padding:20px;
+}
+#click:hover{
+    cursor:pointer;
+}
+
+#content_left{
+    background-color:white;
+    height:100%;
+    width:100%;
+    float:left;
+    padding-left:5px;
+    padding-right:7px;
+    font-family:"Georgia", sans-serif; 
+    overflow-y:auto
+}
+#content_left2 {  
+    width:390px;
+    float:left;
+    padding-left:5px;
+    padding-right:7px;
+    font-family:"Georgia", sans-serif; 
+    overflow-y:auto
+}
+
+#mission {
+    margin-left: 310px;
+    margin-right: 30px;
+    text-align: justify; 
+}
+
+#about_content_left2 {
+    width:91%;
+    padding-left:35px;
+    padding-right:37px;
+    font-family:"Georgia", sans-serif; 
+    overflow-y:auto
+}
+#about_content_right2 {
+    background-color:#FFF;
+    height:290px;
+    width:99%;
+    float:left;
+    padding-left:335px;
+    padding-right:7px;
+    font-family:"Georgia", sans-serif; 
+    overflow-y:auto
+}
+#form{
+    color: black;
+    float:left;
+}
+#submit{
+    background-color: rgb(104,104,104);
+    color:white;
+    padding:10px;
+}
+#input{
+    background-color: rgb(104,104,104);
+    color:white;
+}
+#submitted{
+    background-color:lightgreen;
+    color: black;
+     float:right; 
+     margin-right: 30px;
+}
+#content_right {
+    height:250px;
+    width:395px;
+    float:left;
+}
+
+#img {
+    height:166px;
+    width:166px;
+    float:left;
+    padding: 2px 26px 2px 30px;
+}
+
+.img{
+    display: none;
+}
+
+#weddingCakeImage {
+    height:166px;
+    width:166px;
+    float:left;
+    padding: 2px 26px 2px 30px;
+} 
+
+#content_lower_left{
+    height:350px;
+    width:600px; 
+    float:left;  
+}
+#content_lower_right{
+    height:400px;
+    width:200px;
+    float:left;
+}
+#footer{
+    background-color:brown;
+    height:20px;
+    width:926px;
+    float:left;  
+    color:white;
+    font:12px  sans-serif; 
+    line-height:20px;
+    text-align:left; 
+    padding:5px 15px  ;
+      bottom:0px; 
+}
+
+#shows{
+    color:#E6E6E6;
+    font:1.4em "Georgia", sans-serif; 
+    word-spacing:15px;
+    letter-spacing:4px;
+    padding-left:25px;
+}
+
+
+.data {
+    padding-left:23px;
+}

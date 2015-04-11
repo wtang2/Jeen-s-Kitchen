@@ -1,0 +1,9 @@
+#submit{
+	cursor:pointer;
+	opacity:0.6;
+}
+
+#submit:hover{
+	opacity:1.0;
+}
+

@@ -1,0 +1,118 @@
+
+  .imgwrap div{
+  position:absolute;
+  float:left;
+  margin:31px 0px;
+  width: auto; 
+  background:#666699;
+  color:#fff;
+  line-height:25px;
+  padding:0 10px;
+}
+#slider {
+  position:absolute; 
+  background: white;  
+  z-index: -1; 
+  top:135px;
+  height: 296px; 
+  width: 906px;    
+  padding:0px 25px 0px 25px;
+}
+#slider > spanslide {
+    position:absolute; 
+    top: 4px;
+    left: 11px;
+    right: 10px;
+    bottom: 10px;
+}
+spanslide {
+  display: none;
+  z-index: -1;
+}
+
+#slider img {
+    max-width:896px;
+    max-height:294px; 
+    width:896px; 
+    padding-left: 20px;
+}
+
+#slider ul {
+    list-style:none;
+    margin:15px;
+    padding:0px;
+}
+#slider ul li {
+    float:left;
+    border-radius:10px;
+    width:15px;
+    height:15px;
+    margin:0px 3px;
+    background:white;
+}
+#slider ul li.active {
+    background:orange;
+} 
+#p1{
+  font-family:Sans-Serif, helvetice; 
+  position:absolute; 
+  padding:9px 9px; 
+  word-spacing:2px;
+  top:175px; 
+  margin:30px;
+  background-color: #CC6600; 
+  color: white;
+  left:205px;
+  top:70px 
+}
+
+#scrollRight,#scrollLeft:hover{
+  cursor:pointer
+}
+#p2{
+  font-family:Sans-Serif, helvetice; 
+  font-size:25px;
+  padding:9px 9px; 
+  position:absolute; 
+  background-color: #993333; 
+  color: white;
+  padding-left:10px; 
+  left:205px;
+  top:110px; 
+  margin:30px
+}
+#div1{
+  height: 300px; width: 94%; padding-left:28px;padding-right:26px;alt:about us; float:left
+}
+#div2{
+  height: 200px; position:absolute;top:430px;width:902px;background-color:white; z-index:-999;padding-left:28px;padding-right:26px;alt:about us; float:left
+}
+#a1{
+  color: brown; text-align: justify; font-size:24px;font-family: Sans-Serif
+}
+#a2{
+  color: darkred; font-size:15px;font-stretch: condensed;font-family: Sans-Serif
+}
+#slideDown{
+  width:220px ;padding:0px 0px 0px 11px;margin:5px 19px;float: left
+         
+}
+#previousImage{
+  display:none;position:absolute;background-color:#606060; color:white; top:408px;left:1000px;padding:5px 9px;font-size:12px
+}
+#nextImage{
+  display:none; position:absolute;top:408px;left:1029px;background-color:#606060; color:white; padding:5px 9px;font-size:12px
+}
+#scrollLeft{
+  float:left;margin:21px 6px 15px 12px; color:white; background-color: rgb(104,0,0); height:140px; font-size:22px; opacity:0.4
+}
+#image, #image4, #image1{
+  display:none; 
+  height: 140px; 
+  float:left;
+  padding:0px 4px;
+  margin:21px 0px ;
+  width: 180px;
+}
+
+
